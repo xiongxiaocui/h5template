@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>竖屏切换</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/style-page-list.css"/>
+    <link rel="stylesheet" href="css/jpreloader.css"/>
+    <script src="js/zepto_modify.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/pxloader-all.min.js"></script>
+    <script>
+        pageCount = 7; // 总共有几个页面要滑
+    </script>
+    <script>
+        // 放大元素,按照320x504定位,按比例scale
+        function scaleEle(selector, position) {
+            var pageScale;
+            var currentScale = screenWidth / screenHeight;
+            var originScale = 320 / 504;
+            if (currentScale > originScale) {
+                pageScale = screenHeight / 504;
+            } else {
+                pageScale = screenWidth / 320;
+            }
+            $(selector).css({
+                "-webkit-transform-origin": position,
+                "transform-origin": position,
+                "-webkit-transform": "scale(" + pageScale + ");",
+                "transform": "scale(" + pageScale + ");"
+            });
+        }
+
+        var screenHeight = document.documentElement.clientHeight,
+                screenWidth = document.documentElement.clientWidth;
+
+        scaleEle(".mod-page-list__page", "center");
+
+    </script>
+</head>
+<body>
+
+<!--容器-->
+<div class="container">
+    <!--loading部分-->
+    <!--logo-->
+    <div class="logo"><a href="###"><img src="img/logo.png" alt=""/></a></div>
+    <!--箭头-->
+    <div class="arrow"><img src="img/arrow.png" alt=""/></div>
+    <!--滑动切换的页面-->
+    <!--content-list部分 translate3d(0,yyypx,0)-->
+    <ul class="page-list">
+
+        <!--每一个li为每个页面的容器，设置页面底色-->
+        <li class="page-list__li">
+            <!--页面主内容区，设置页面背景图cover，完全居中-->
+            <div class="page-list__page page-0">
+                <!--<div class="ele page-0__four"><img src="img/p1.png" alt=""/></div>-->
+                <!--<div class="ele page-0__two"><img src="img/tx2.png" alt=""/></div>-->
+                <!--页面内元素，绝对定位-->
+                <div class="ele page-0__one"><img src="img/tx1.png" alt=""/></div>
+
+                <div class="ele page-0__three"><img src="img/tx3.png" alt=""/></div>
+
+            </div>
+
+        </li>
+
+        <li class="page-list__li">
+
+            <div class="page-list__page page-1">
+                <div class="ele page-1__21"><img src="img/p2_03.png" alt=""/></div>
+                <div class="ele page-1__22"><img src="img/p2_06.png" alt=""/></div>
+                <div class="ele page-1__23"><img src="img/p2_08.png" alt=""/></div>
+                <div class="ele page-1__24"><img src="img/p2_09.png" alt=""/></div>
+            </div>
+
+        </li>
+
+        <li class="page-list__li">
+
+            <div class="page-list__page page-2">
+                <div class="ele page-2__35"><img src="img/p4_04.png" alt=""/></div>
+                <div class="ele page-2__31"><img src="img/p4_03.png" alt=""/></div>
+                <div class="ele page-2__32"><img src="img/p4_06.png" alt=""/></div>
+                <div class="ele page-2__33"><img src="img/p4_08.png" alt=""/></div>
+                <div class="ele page-2__34"><img src="img/p4_10.png" alt=""/></div>
+
+            </div>
+
+        </li>
+        <li class="page-list__li">
+
+
+            <div class="page-list__page page-3">
+                <div class="ele page-3__41"><img src="img/p5_03.png" alt=""/></div>
+                <div class="ele page-3__42"><img src="img/p5_07.png" alt=""/></div>
+                <div class="ele page-3__43"><img src="img/p5_11.png" alt=""/></div>
+
+            </div>
+
+        </li>
+        <li class="page-list__li">
+
+
+            <div class="page-list__page page-4">
+                <div class="ele page-3__41"><img src="img/p6_03.png" alt=""/></div>
+                <div class="ele page-3__42 page-4__42"><img src="img/p6_07.png" alt=""/></div>
+                <div class="ele page-3__43"><img src="img/p6_11.png" alt=""/></div>
+
+            </div>
+
+        </li>
+        <li class="page-list__li">
+
+
+            <div class="page-list__page page-5">
+                <div class="ele page-1__21 page-5__21"><img src="img/p7_03.png" alt=""/></div>
+                <div class="ele page-1__22 page-5__22"><img src="img/p7_06.png" alt=""/></div>
+                <div class="ele page-1__23 page-5__23"><img src="img/p7_09.png" alt=""/></div>
+                <div class="ele page-1__24 page-5__24"><img src="img/p7_11.png" alt=""/></div>
+                <!---->
+            </div>
+
+
+        </li>
+        <li class="page-list__li">
+            <div class="page-list__page page-6">
+                <section class="scene fruits">
+                    <div class="banner">
+                        <div><img width="100%" src="img/page1_02.png" alt=""></div>
+                        <div><img width="100%" src="img/page1_03.png" alt=""></div>
+                    </div>
+
+                    <ul class="body">
+                        <li class="p_l_42">
+                            <div class="img"><img src="img/icon1.jpg" alt=""></div>
+                            <div class="title">快递</div>
+                            <div class="text">顺丰或者其他快递仅限顺丰配送区域</div>
+                        </li>
+                        <li class="p_l_43">
+                            <div class="img"><img src="img/icon2.jpg" alt=""></div>
+                            <div class="title">发货时间</div>
+                            <div class="text">48小时内发货节假日另行公告</div>
+                        </li>
+                        <li class="p_l_44">
+                            <div class="img"><img src="img/icon3.jpg" alt=""></div>
+                            <div class="title">理赔标准</div>
+                            <div class="text">拆包务必先验货请12小时内联系我们</div>
+                        </li>
+                    </ul>
+            </div>
+
+            </section>
+
+
+        </li>
+    </ul>
+
+</div>
+<!--DOM在CSS后避免reflow-->
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('body').jpreLoader({},showFirst);
+
+    });
+    function showFirst(){
+        $('.page-list__li').eq(0).first().addClass('animate').siblings().removeClass('animate');
+    }
+    function screenUp() {
+        pageNumber--;
+        var translateString, transitionString;
+        if (pageNumber < 0) {
+            pageNumber = 0;
+        }
+        pageDistance = screenHeight * pageNumber;
+        translateString = "translate3d(0, -" + pageDistance + "px, 0)";
+        transitionString = "all 0.5s ease-in";
+
+        verticalList.css({
+            "-webkit-transform": translateString,
+            "transform": translateString,
+            "-webkit-transition": transitionString,
+            "transition": transitionString
+        });
+        $('.page-list__li').eq(pageNumber).first().addClass('animate').siblings().removeClass('animate');
+    }
+
+    // 下一屏
+    function screenDown() {
+        if(pageNumber==6){
+            window.location.href=''
+        }
+        pageNumber++;
+        var translateString, transitionString;
+        if (pageNumber > (pageCount - 1)) {
+            pageNumber = pageCount - 1;
+        }
+        pageDistance = screenHeight * pageNumber;
+        translateString = "translate3d(0, -" + pageDistance + "px, 0)";
+        transitionString = "all 0.5s ease-in";
+
+        verticalList.css({
+            "-webkit-transform": translateString,
+            "transform": translateString,
+            "-webkit-transition": transitionString,
+            "transition": transitionString
+        });
+        $('.page-list__li').eq(pageNumber).first().addClass('animate').siblings().removeClass('animate');
+    }
+
+    // 定义变量
+    var screenHeight = document.documentElement.clientHeight,
+            screenWidth = document.documentElement.clientWidth,
+            verticalList = $(".page-list"),
+            pageNumber = 0,
+            pageDistance = 0;
+
+    verticalList.css({"height": screenHeight * pageCount + 10, "width": screenWidth});
+    $(".page-list__li").css({"height": screenHeight, "width": screenWidth});
+
+    $(".container").on("touchmove", function (e) {
+        e.preventDefault();
+    });
+
+    // 绑定事件
+    verticalList.on("swipeUp", screenDown);
+    verticalList.on("swipeDown", screenUp);
+</script>
+</body>
+</html>
